@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: plotting-app
-        image: public.ecr.aws/o5s3g1r4/plotting:latest
+        image: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-user-app:latest
         ports:
         - containerPort: 80
 ---
