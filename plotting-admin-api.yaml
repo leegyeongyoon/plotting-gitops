@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: plotting-admin-api
-        image: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-admin-api
+        image: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-admin-api:latest
         ports:
         - containerPort: 8081
 ---
