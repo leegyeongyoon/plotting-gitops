@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-plotting-app-deployment
+  namespace: plotting
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev-plotting-app
+  template:
+    metadata:
+      labels:
+        app: dev-plotting-app
+    spec:
+      containers:
+      - name: dev-plotting-app
+        image: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-user-app:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-plotting-app-service
+  namespace: plotting
+spec:
+  selector:
+    app: dev-plotting-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
