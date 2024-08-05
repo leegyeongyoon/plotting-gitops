@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-plotting-scheduler-deployment
+  namespace: plotting
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dev-plotting-scheduler
+  template:
+    metadata:
+      labels:
+        app: dev-plotting-scheduler
+    spec:
+      containers:
+      - name: plotting-scheduler
+        image: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-scheduler:latest
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dev-plotting-scheduler-service
+  namespace: plotting
+spec:
+  selector:
+    app: dev-plotting-scheduler
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
+
+
+
