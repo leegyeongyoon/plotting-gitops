@@ -1,6 +1,6 @@
 replicaCount: 1
 
-jimage:
+image:
   repository: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-scheduler
   tag: "latest"
   pullPolicy: IfNotPresent
