@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-admin-app
   tag: "latest"
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
