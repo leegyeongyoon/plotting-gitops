@@ -1,4 +1,5 @@
 replicaCount: 1
+revisionHistoryLimit: 3
 
 image:
   repository: 590183865331.dkr.ecr.ap-northeast-2.amazonaws.com/plotting-scheduler
