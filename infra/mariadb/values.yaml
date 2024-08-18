@@ -124,7 +124,7 @@ auth:
   ## @param auth.rootPassword Password for the `root` user. Ignored if existing secret is provided.
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mariadb#setting-the-root-password-on-first-run
   ##
-  rootPassword: ""
+  rootPassword: "plot123!"
   ## @param auth.database Name for a custom database to create
   ## ref: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-on-first-run
   ##
@@ -527,7 +527,7 @@ primary:
   service:
     ## @param primary.service.type MariaDB Primary Kubernetes service type
     ##
-    type: ClusterIP
+    type: NodePort
     ports:
       ## @param primary.service.ports.mysql MariaDB Primary Kubernetes service port for MariaDB
       ##
@@ -539,7 +539,7 @@ primary:
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
     ##
     nodePorts:
-      mysql: ""
+      mysql: "30306"
     ## @param primary.service.clusterIP MariaDB Primary Kubernetes service clusterIP IP
     ##
     clusterIP: ""
