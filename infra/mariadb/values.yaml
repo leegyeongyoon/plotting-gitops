@@ -874,7 +874,7 @@ secondary:
   ## E.g.
   ## extraFlags: "--max-connect-errors=1000 --max_connections=155"
   ##
-  extraFlags: ""
+  extraFlags: "--max_connections=30000"
   ## @param secondary.extraEnvVars Extra environment variables to be set on MariaDB secondary containers
   ## E.g.
   ## extraEnvVars:
