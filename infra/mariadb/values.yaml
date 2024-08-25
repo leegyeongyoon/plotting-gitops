@@ -602,7 +602,7 @@ secondary:
   name: secondary
   ## @param secondary.replicaCount Number of MariaDB secondary replicas
   ##
-  replicaCount: 1
+  replicaCount: 3
   ## @param secondary.command Override default container command on MariaDB Secondary container(s) (useful when using custom images)
   ##
   command: []
@@ -794,15 +794,15 @@ secondary:
   resourcesPreset: "micro"
   ## @param secondary.resources Set container requests and limits for different resources like CPU or memory (essential for production workloads)
   ## Example:
-  ## resources:
-  ##   requests:
-  ##     cpu: 2
-  ##     memory: 512Mi
-  ##   limits:
-  ##     cpu: 3
-  ##     memory: 1024Mi
+  resources:
+    requests:
+      cpu: 1
+      memory: 512Mi
+    limits:
+      cpu: 1
+      memory: 1024Mi
   ##
-  resources: {}
+  #resources: {}
   ## Configure extra options for MariaDB Secondary containers' liveness, readiness and startup probes
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
   ## @param secondary.startupProbe.enabled Enable startupProbe
